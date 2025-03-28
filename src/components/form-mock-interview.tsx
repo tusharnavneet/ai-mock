@@ -126,7 +126,7 @@ export const FormMockInterview = ({ initialData }: FormMockInterviewProps) => {
         // update
         if (isValid) {
           const aiResult = await generateAiResponse(data);
-
+           
           await updateDoc(doc(db, "interviews", initialData?.id), {
             questions: aiResult,
             ...data,
